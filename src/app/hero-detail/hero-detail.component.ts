@@ -2,12 +2,15 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { ActivatedRoute } from '@angular/router';
 import { HeroService } from '../hero.service';
-import { Location } from '@angular/common';
+import { Location, NgIf, UpperCasePipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
   styleUrls: ['./hero-detail.component.scss'],
+  standalone: true,
+  imports: [NgIf, FormsModule, UpperCasePipe],
 })
 export class HeroDetailComponent implements OnInit {
   @Input() hero?: Hero;
