@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { ActivatedRoute } from '@angular/router';
 import { HeroService } from '../hero.service';
@@ -15,11 +15,9 @@ import { FormsModule } from '@angular/forms';
 export class HeroDetailComponent implements OnInit {
   @Input() hero?: Hero;
 
-  constructor(
-    private route: ActivatedRoute,
-    private heroService: HeroService,
-    private location: Location,
-  ) {}
+  private route = inject(ActivatedRoute);
+  private heroService = inject(HeroService);
+  private location = inject(Location);
 
   ngOnInit(): void {
     this.getHero();

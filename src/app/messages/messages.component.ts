@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MessageService } from '../message.service';
 import { NgForOf, NgIf } from '@angular/common';
 
@@ -10,5 +10,5 @@ import { NgForOf, NgIf } from '@angular/common';
   imports: [NgIf, NgForOf],
 })
 export class MessagesComponent {
-  constructor(public messageService: MessageService) {}
+  messageService = inject(MessageService);
 }

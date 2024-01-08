@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
 import { Observable } from 'rxjs';
 import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { HeroBadgeComponent } from '../hero-badge/hero-badge.component';
+import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-heroes',
@@ -15,7 +15,7 @@ import { HeroBadgeComponent } from '../hero-badge/hero-badge.component';
   imports: [NgForOf, AsyncPipe, RouterLink, HeroBadgeComponent, NgIf],
 })
 export class HeroesComponent {
-  heroes$: Observable<Hero[]> = this.heroService.getHeroes();
+  private heroService = inject(HeroService);
 
-  constructor(private heroService: HeroService) {}
+  heroes$: Observable<Hero[]> = this.heroService.getHeroes();
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { NgForOf } from '@angular/common';
@@ -13,8 +13,7 @@ import { RouterLink } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
-
-  constructor(private heroService: HeroService) {}
+  private heroService = inject(HeroService);
 
   ngOnInit(): void {
     this.getHeroes();
