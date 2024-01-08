@@ -10,5 +10,6 @@ export class HeroesComponent {
   hero: Hero = {
     id: 1,
     name: 'Windstorm',
+    superpower: 'Weather control',
   };
 }
