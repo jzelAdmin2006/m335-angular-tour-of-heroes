@@ -9,9 +9,10 @@ import { FormsModule } from '@angular/forms';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MessagesComponent } from './messages/messages.component';
+import { HeroBadgeComponent } from './hero-badge/hero-badge.component';
 
 @NgModule({
-  declarations: [AppComponent, TestComponent, HeroesComponent, HeroDetailComponent, DashboardComponent, MessagesComponent],
+  declarations: [AppComponent, TestComponent, HeroesComponent, HeroDetailComponent, DashboardComponent, MessagesComponent, HeroBadgeComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

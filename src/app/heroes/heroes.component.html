@@ -1,9 +1,10 @@
 <h2>My Heroes</h2>
+<h2>My Heroes</h2>
 <ul class="heroes">
-  <li *ngFor="let hero of heroes$ | async">
+  <li *ngFor="let hero of heroes$ | async; let i = index">
     <a routerLink="/detail/{{ hero.id }}">
-      <span class="badge">{{ hero.id }}</span> {{ hero.name
-      }}<span *ngIf="hero.superpower" class="superpower">💥</span>
+      <app-hero-badge [heroId]="hero.id" [index]="i"></app-hero-badge>
+      {{ hero.name }}<span *ngIf="hero.superpower" class="superpower">💥</span>
     </a>
   </li>
 </ul>
