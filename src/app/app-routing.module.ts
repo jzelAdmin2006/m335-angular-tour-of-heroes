@@ -22,6 +22,13 @@ const routes: Routes = [
         (m) => m.HeroDetailComponent,
       ),
   },
+  {
+    path: 'learnt-lessons',
+    loadComponent: () =>
+      import('./learnt-lessons/learnt-lessons.component').then(
+        (m) => m.LearntLessonsComponent,
+      ),
+  },
 ];
 
 @NgModule({

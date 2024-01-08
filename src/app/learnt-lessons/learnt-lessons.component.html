@@ -1,0 +1,9 @@
+<h2>Lessons Learned</h2>
+<p>'Verwendung von Observables und der Async Pipe',</p>
+<p>'Standalone und Modules',</p>
+<div *ngIf="contactData$ | async as contactData">
+  <h3>Kontaktinformationen:</h3>
+  <p>Firma: {{ contactData.company }}</p>
+  <p>Name: {{ contactData.name }}</p>
+  <p>Email: {{ contactData.email }}</p>
+</div>
